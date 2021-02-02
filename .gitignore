@@ -1,2 +1,5 @@
 # Visual Studio cache/options directory
 .vs/
+
+# Jupyter notebook backups
+.ipynb_checkpoints/
