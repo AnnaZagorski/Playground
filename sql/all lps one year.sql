@@ -14,5 +14,4 @@ FROM (
 	INNER JOIN releases ON facilities.id = releases.facility_id
 	WHERE releases.year = 2018)
 GROUP BY id
-/* ORDER BY name */
-ORDER BY "SO2 (t)" DESC
+ORDER BY name
