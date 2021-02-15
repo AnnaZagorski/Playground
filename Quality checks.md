@@ -3,6 +3,7 @@
 These checks should run before submitting the data under the LRTAP convention:
 
 * Total lps emssions < national total
+* All releases to compartment air for given year inculded in output.csv
 * unit mistakes
 * not empty: IDs, stack height, GNFR, coordinates
 * at least one pollutant given for each lps
