@@ -12,5 +12,6 @@ These checks should run before submitting the data under the LRTAP convention:
 * Sanitize plant names
 * TSP > PM10 >PM2.5 >BC
 * PM > HM
+* Verify script result with a manual filtering in the Excel files also provided by thru.de
 
 See NECD review results 2020 for more ideas!
