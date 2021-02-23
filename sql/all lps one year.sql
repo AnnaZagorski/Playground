@@ -20,9 +20,9 @@
 	SUM(annual_load / 1000) FILTER (WHERE substance_name = 'Polycyclic aromatic hydrocarbons (PAHs)') AS 'PAHs [t]',
 	SUM(annual_load) FILTER (WHERE substance_name = 'Hexachlorobenzene (HCB)') AS 'HCB [kg]',
 	SUM(annual_load) FILTER (WHERE substance_name = 'Polychlorinated biphenyls (PCBs)') AS 'PCBs [kg]'
-FROM facilities
-	INNER JOIN activities ON facilities.id = activities.facility_id
-	INNER JOIN releases ON facilities.id = releases.facility_id
-WHERE facilities.year = 2018 and releases.compartment = 'Air' and activities.main_activity = True
-GROUP BY facilities.id
+FROM facilities as f
+	INNER JOIN activities as a ON f.id = a.facility_id
+	INNER JOIN releases as r (USING facility_id)
+WHERE f.year = 2018 and r.compartment = 'Air' and a.main_activity = True
+GROUP BY f.id
 ORDER BY name
